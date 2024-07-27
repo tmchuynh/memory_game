@@ -5,8 +5,6 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      border: 1px solid red;
       background-color: #f0f0f0;
       padding: 2rem;
 }
@@ -21,8 +19,8 @@ h1 {
 
 .game-board {
       display: grid;
-      height: 50%;
-      width: 50%;
+      height: 60rem;
+      width: 60rem;
       gap: 10px;
       border: 5px solid #62a87c;
       border-radius: 15px;
@@ -37,7 +35,6 @@ h1 {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 36px;
       cursor: pointer;
       background-color: #c7d9b7;
       border-radius: 10px;
@@ -62,8 +59,6 @@ h1 {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff;
-      font-size: 24px;
       transition: opacity 0.3s ease;
 }
 
@@ -107,4 +102,5 @@ button:hover {
 .play-again {
       position: absolute;
       display: none;
+      top: 40%;
 }

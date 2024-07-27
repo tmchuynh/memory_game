@@ -9,24 +9,38 @@ const revealButton = document.querySelector(".reveal"); // Button to reveal all 
 // How many cards can I have? (aka, how many images can I have) Pick one from the following:
 // 8, 18, or 32 images
 const symbols = [
-      "https://occ-0-116-114.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABf_vkYSzY2EsbRFAOJOS3_ZdreU4YoqzdzVZf-f1CEP9ndmI3705aHteXy3ZD7tLH4YbavoJT3lPK9luZDLgQxhQOBw1tLuBzxFG.jpg?r=b99",
-      "https://nashuproar.org/wp-content/uploads/2021/10/Pokemon-Presents.jpg",
-      "https://cdn.mos.cms.futurecdn.net/DVg3vj34mtKrKQhpy6z4H-1200-80.png",
-      "https://editors.dexerto.com/wp-content/uploads/2021/12/30/sierra-leader-pokemon-go-poliwag-counters.jpg",
-      "https://m.economictimes.com/thumb/msid-102431292,width-1200,height-900,resizemode-4,imgsize-45536/pokemon-gos-cresselia-raid-see-weaknesses-how-to-acquire-counters.jpg",
-      "https://ftw.usatoday.com/wp-content/uploads/sites/90/2022/01/pokemon-best-starters.jpg?w=1000&h=600&crop=1",
-      "https://i0.wp.com/setthetape.com/wp-content/uploads/2020/04/pokemon-the-first-movie-cover.jpg?fit=1200%2C460&ssl=1",
-      "https://mktg-assets.tcgplayer.com/content/pokemon/2_21/MST3King%20The%20First%20Movie/ash_emerges.png",
-      "https://imgix.ranker.com/list_img_v2/4631/1704631/original/best-grass-pokemon-u1?w=817&h=427&fm=jpg&q=50&fit=crop",
-      "https://assetsio.reedpopcdn.com/pokemon_clones.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp",
-      "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/04/pokemon-rhydon.jpg",
-      "https://cdnb.artstation.com/p/assets/images/images/038/728/519/4k/lime-brin-pokemon-fav-starters.jpg?1623889890",
-      "https://static1.srcdn.com/wordpress/wp-content/uploads/2023/01/pokemon-the-first-movie-mewtwo-and-clones.jpg",
-      "https://media.thenerdstash.com/wp-content/uploads/2020/08/Pokemon-themed-Mix-Drinks.jpg",
-      "https://images.nintendolife.com/ad03f8a9628b9/pokemon-television-series.900x.jpg",
-      "https://upload.wikimedia.org/wikipedia/en/9/92/Pok%C3%A9mon_episode_1_screenshot.png",
-      "https://i.ytimg.com/vi/D-bckvBvtQU/maxresdefault.jpg",
-      "https://i0.wp.com/www.animefeminist.com/wp-content/uploads/2019/10/Pokemon3-107.png?resize=768%2C567&ssl=1"
+      "https://hips.hearstapps.com/hmg-prod/images/sunday-dinner-ideas-65e0c007e8edc.jpeg?crop=1.00xw:1.00xh;0,0&resize=640:*",
+      "https://foolproofliving.com/wp-content/uploads/2020/05/Easy-Dinner-Recipes.jpg",
+      "https://madeitateitlovedit.com/wp-content/uploads/2021/08/Carne-Asada-Nachos-18-scaled-735x1102.jpg",
+      "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/11/Greek-Sheet-Pan-Chicken-Dinner-main-1.jpg",
+      "https://www.healthyseasonalrecipes.com/wp-content/uploads/2015/07/grilled-steaks-with-kale-pesto-alt-27-735x1103.jpg",
+      "https://www.southernliving.com/thmb/bP8GlPtrJ5BXPV3_e45EWMG_guQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/27176-HIH-SkilletChili_0230_16x9-2000-868ad7fea4e3412d89ac72a21378383c.jpg",
+      "https://hips.hearstapps.com/hmg-prod/images/easy-dinner-ideas-chicken-marsala-1642715952.jpg",
+      "https://cdn.vox-cdn.com/thumbor/jXj4f76-nt1URYHN4p9oIAdPbC0=/0x163:1440x917/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/24470237/327265918_1537141406779854_5319246903894973824_n.jpeg",
+      "https://ww2.kqed.org/app/uploads/sites/24/2015/02/Hu-Tieu-1200.jpg",
+      "https://www.savorysweetspoon.com/wp-content/uploads/2023/03/Vietnamese-Fried-Rice-Com-Chien-1x1-1.jpg",
+      "https://i.ndtvimg.com/i/2016-04/vietnamese-rolls-625_625x350_71461738215.jpg",
+      "https://cdn.vox-cdn.com/thumbor/zh_As26xjB0DU0bx8Bqw6y7rzCA=/0x0:1440x1080/1200x900/filters:focal(605x425:835x655)/cdn.vox-cdn.com/uploads/chorus_image/image/72026362/327265918_1537141406779854_5319246903894973824_n.0.jpeg",
+      "https://offloadmedia.feverup.com/secretsingapore.co/wp-content/uploads/2023/07/13200705/Megan-Article-Covers-2023-07-31T152946.500.png",
+      "https://cdn-v2.theculturetrip.com/1200x630/wp-content/uploads/2021/07/banh-mi.webp",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTlEfGnebzbV_bKv08qMgxFV7tC4gsl2rsHQ&s",
+      "https://assets3.thrillist.com/v1/image/2771730/1000x666/flatten;crop;webp=auto;jpeg_quality=60.jpg",
+      "https://s3-media0.fl.yelpcdn.com/bphoto/mnLjFjxYsiqVxYnJJ0dSVg/348s.jpg",
+      "https://i.insider.com/5f0c825aaee6a85e9738c65d?width=700",
+      "https://www.rochestermazda.com/blogs/2755/wp-content/uploads/2021/01/4_Places_to_Find_the_Best_Chinese_Food_in_Rochester_637467443556401189.png",
+      "https://assets.epicurious.com/photos/63b5ba99219501813d153624/1:1/w_2560%2Cc_limit/Stir-Fried-String-Bean-With-Tofu-RECIPE.jpg",
+      "https://www.aheadofthyme.com/wp-content/uploads/2021/06/tofu-and-mushroom-stir-fry-683x1024.jpg",
+      "https://images.squarespace-cdn.com/content/v1/530286f8e4b0d1c4964d040e/1466655386330-EDZ7WUTXAZ6OGPCFSB06/image-asset.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxxemAEJOOOYTK-BUc6nsKIE338y9U847bQ&s",
+      "https://res.cloudinary.com/rainforest-cruises/images/c_fill,g_auto/f_auto,q_auto/v1622583451/Vietnamese-Street-Food-Ban-Xeo/Vietnamese-Street-Food-Ban-Xeo.jpg",
+      "https://vcdn1-english.vnecdn.net/2022/05/21/foodyuploadapifoodymobileuntit-9911-9008-1653089489.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=VX71xbeQrg0CLcuQi1G9dw",
+      "https://images.myguide-cdn.com/content/2/large/street-food-in-vietnam-427453.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_wOtUL9CNZDAgQ0oHJMNMSVWeTWvmAYQRQw&s",
+      "https://res.cloudinary.com/rainforest-cruises/images/c_fill,g_auto/f_auto,q_auto/w_1120,h_650/v1622728125/The-Best-Food-In-Vietnam-Com-Tam/The-Best-Food-In-Vietnam-Com-Tam.jpg",
+      "https://www.indochina.tours/wp-content/uploads/2019/01/street-food-of-banh-trang-tron-in-southern-vietnam.jpg",
+      "https://www.trafalgar.com/real-word/wp-content/uploads/sites/3/2020/10/Blog-photo-size.png",
+      "https://www.hanoilocaltour.com/wp-content/uploads/Savory-Banh-Tom-in-West-Lake.jpg",
+      "https://i0.wp.com/learningenglishwithoxford.com/wp-content/uploads/2022/03/Copy-of-Unnamed-Design-2.png?fit=1600%2C900&ssl=1"
 ];
 
 let cards = []; // Array to hold shuffled card elements
@@ -55,13 +69,15 @@ function createCards() {
       pairedUrls.forEach((url) => {
             const card = document.createElement("div"); // Create a new div element for each card
             card.classList.add("card"); // Add 'card' class for styling
+            card.style.height = "calc(52rem /" + `${gridSize}` + ")";
+            card.style.width = "calc(52rem /" + `${gridSize}` + ")";
             card.innerHTML = `
                 <div class="overlay"></div>
                 <img src="${url}" class="image">`; // Set card content with an overlay and an image
             cards.push(card); // Add the card to the cards array
       });
 
-      cards.sort(() => Math.random() - 0.5); // Shuffle the cards randomly
+      cards = shuffle(cards);
 
       // Set grid layout based on the grid size
       gameBoard.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`; // Set the number of columns
@@ -76,6 +92,14 @@ function createCards() {
       if (playButton) {
             playButton.style.display = "none"; // Hide the play button while playing
       }
+}
+
+function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+      }
+      return array;
 }
 
 // Function to handle card flipping
